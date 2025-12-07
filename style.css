@@ -1,0 +1,331 @@
+/* Общие настройки */
+:root {
+    --primary: #4361ee;
+    --primary-light: #4895ef;
+    --success: #4cc9f0;
+    --success-light: #a3c4f3;
+    --danger: #f72585;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #212529;
+    --text-light: #6c757d;
+    --border: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Скрываем стрелки в WebKit (Chrome, Edge, Safari) */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+/* Скрываем стрелки в Firefox */
+    input[type="number"] {
+    -moz-appearance: textfield;
+    }
+  
+  /* Заголовки */
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+  }
+  
+  /* Разделы */
+  section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  
+  /* Форма */
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  /* Кнопки */
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-delete {
+    background: var(--danger);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary-light);
+  }
+  
+  .btn-secondary {
+    background: var(--success);
+    color: white;
+    width: 100%;
+    margin: 24px 0;
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--success-light);
+  }
+  
+  .btn-secondary:disabled {
+    background: #b8c2cc;
+    cursor: not-allowed;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+  }
+  
+  .btn-outline:hover {
+    background: rgba(247, 37, 133, 0.05);
+  }
+
+  .duration-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .duration-btn {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+  
+  .duration-btn:hover {
+    background: #e9ecef;
+  }
+  
+  .duration-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .slot-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .slot-btn {
+    padding: 8px 14px;
+    border: 1px solid #ced4da;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .slot-btn.active {
+    background: #4361ee;
+    color: white;
+    border-color: #4361ee;
+  }
+  
+  /* Список задач */
+  .task-list {
+    min-height: 60px;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f1f3f5;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    animation: fadeIn 0.3s ease;
+
+    position: relative;
+  }
+  
+  .task-info {
+    font-weight: 600;
+
+    max-width: 270px;
+    word-break: break-all;
+  }
+  
+  .task-minutes {
+    color: var(--text-light);
+    font-size: 0.9rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 4px;
+  }
+  
+  /* Расписание */
+  .schedule-item {
+    padding: 12px;
+    background: #eef7ff;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+
+  .schedule-item--fixed {
+    position: relative;
+    background: #f8f9ff;
+    border-left: 3px solid #4895ef;
+    font-weight: 600;
+    color: #2b2d42;
+  }
+
+  .schedule-item--fixed::after {
+    content: "обязательное";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e9ecef;
+    color: #6c757d;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+  
+  /* Сообщения */
+  .empty-message {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    padding: 16px;
+  }
+  
+  /* Управление */
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  /* Адаптив */
+  @media (max-width: 600px) {
+    .container {
+      padding: 12px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .controls {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+  
+  /* Анимации */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }

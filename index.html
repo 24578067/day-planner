@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Планировщик дня</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Мой день</h1>
+        <p class="subtitle">Спланируй своё время — и следуй плану</p>
+      </header>
+
+      <!-- Форма добавления задачи -->
+      <section class="form-section">
+        <h2>Добавить задачу</h2>
+        <form id="task-form">
+          <div class="input-group">
+            <label for="task-name">Название</label>
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Например: Изучить замыкания"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label>Длительность</label>
+            <div class="duration-buttons" id="duration-buttons">
+              <button type="button" class="duration-btn" data-minutes="30">
+                30 мин
+              </button>
+              <button type="button" class="duration-btn" data-minutes="60">
+                1 час
+              </button>
+              <button type="button" class="duration-btn" data-minutes="90">
+                1.5 часа
+              </button>
+              <button type="button" class="duration-btn" data-minutes="120">
+                2 часа
+              </button>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Когда делать?</label>
+            <div class="slot-buttons" id="slot-buttons">
+              <button type="button" class="slot-btn active" data-slot="morning">
+                Утро
+              </button>
+              <button type="button" class="slot-btn" data-slot="afternoon">
+                День
+              </button>
+              <button type="button" class="slot-btn" data-slot="evening">
+                Вечер
+              </button>
+            </div>
+          </div>
+          <button id="add-task-btn" type="submit" class="btn btn-primary">
+            Добавить
+          </button>
+        </form>
+      </section>
+
+      <!-- Список задач -->
+      <section class="tasks-section" id="tasks-section">
+        <h2>Мои задачи</h2>
+        <div id="tasks-list" class="task-list">
+          <!-- Задачи будут добавляться сюда -->
+        </div>
+      </section>
+
+      <!-- Кнопка генерации расписания -->
+      <button id="generate-btn" class="btn btn-secondary" disabled>
+        Создать расписание
+      </button>
+
+      <!-- Расписание -->
+      <section class="schedule-section" id="schedule-section">
+        <h2>Расписание</h2>
+        <div id="schedule" class="schedule"></div>
+      </section>
+
+      <!-- Кнопки управления -->
+      <div class="controls">
+        <button id="clear-all-btn" class="btn btn-outline">Очистить всё</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
