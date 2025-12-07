@@ -42,5 +42,5 @@
 
 - Клонируй репозиторий:
   ```bash
-  git clone https://github.com/ваш-ник/day-planner.git
+  git clone https://github.com/24578067/day-planner.git
   ```
